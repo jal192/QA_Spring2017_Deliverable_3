@@ -11,7 +11,8 @@ public class TestRunner {
 
 	// ADD ANY MORE CLASSES YOU WISH TO TEST HERE
 	
-	classesToTest.add(HomeTest.class);
+	//classesToTest.add(HomeTest.class);
+	classesToTest.add(FactorialTest.class);
 	
 	// For all test classes added, loop through and use JUnit
 	// to run them.
