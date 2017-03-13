@@ -13,7 +13,8 @@ public class TestRunner {
 	
 	//classesToTest.add(HomeTest.class);
 	//classesToTest.add(FactorialTest.class);
-	classesToTest.add(FibonacciTest.class);
+	//classesToTest.add(FibonacciTest.class);
+	classesToTest.add(HelloTest.class);
 	
 	// For all test classes added, loop through and use JUnit
 	// to run them.
