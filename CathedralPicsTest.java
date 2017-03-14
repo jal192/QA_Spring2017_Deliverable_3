@@ -5,6 +5,7 @@
 	Deliverable 3
 	
 	Number of tests: 1
+	Total number of tests: 28
 	
 	Requirements Tested: 2, 8
 	
@@ -34,6 +35,7 @@ public class CathedralPicsTest {
 		driver.get(baseUrl);
 	}
 	
+	
 	// Tests requirement #8
 	// This test implicitly tests requirement #2, ensuring that clicking on the 
 	// Cathedral header link leads to pictures of the Cathedral of Learning.
@@ -47,7 +49,8 @@ public class CathedralPicsTest {
 		assertEquals(3, picCount.size());
 	}
 	
-
+	
+	// Clean up after each test, close browser window and end session
 	@After
 	public void tearDown() throws Exception {
 		driver.quit();
