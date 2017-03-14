@@ -5,6 +5,7 @@
 	Deliverable 3
 	
 	Number of tests: 9
+	Total number of tests: 28
 	
 	Requirements Tested: 2, 3, 5
 	
@@ -32,6 +33,7 @@ public class FactorialTest {
 		baseUrl = "https://cs1632ex.herokuapp.com/";
 		driver.get(baseUrl);
 	}
+	
 	
 	// #######################################
 	// ############# VALID INPUT #############
@@ -117,6 +119,7 @@ public class FactorialTest {
 		assertEquals("Factorial of 101 is 1!", driver.findElement(By.cssSelector("h2")).getText());
 	}
 	
+	
 	// Tests requirement #5
 	
 	// Given the app homepage, navigate to the Factorial page.
@@ -130,6 +133,7 @@ public class FactorialTest {
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
 		assertEquals("Factorial of 777 is 1!", driver.findElement(By.cssSelector("h2")).getText());
 	}
+	
 	
 	// Tests requirement #5
 	
@@ -145,6 +149,7 @@ public class FactorialTest {
 		assertEquals("Factorial of -713 is 1!", driver.findElement(By.cssSelector("h2")).getText());
 	}
 	
+	
 	// Tests requirement #5
 	
 	// Given the app homepage, navigate to the Factorial page.
@@ -158,6 +163,7 @@ public class FactorialTest {
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
 		assertEquals("Factorial of 3.141592653 is 1!", driver.findElement(By.cssSelector("h2")).getText());
 	}
+  
   
 	// Tests requirement #5
 	
@@ -174,6 +180,7 @@ public class FactorialTest {
 	}
   
 	
+	// Clean up after each test, close browser window and end session
 	@After
 	public void tearDown() throws Exception {
 		driver.quit();
