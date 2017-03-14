@@ -5,6 +5,7 @@
 	Deliverable 3
 	
 	Number of tests: 10
+	Total number of tests: 28
 	
 	Requirements Tested: 2, 4, 5
 	
@@ -54,6 +55,7 @@ public class FibonacciTest {
 		assertEquals("Fibonacci of 1 is 1!", driver.findElement(By.cssSelector("h2")).getText());
 	}
 
+	
 	// Tests requirement #4
 	// Tests explicit boundary value 100.
 	
@@ -193,6 +195,7 @@ public class FibonacciTest {
 	}
 	
 	
+	// Clean up after each test, close browser window and end session
 	@After
 	public void tearDown() throws Exception {
 		driver.quit();
