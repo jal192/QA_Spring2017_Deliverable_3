@@ -4,8 +4,11 @@
 	cs1632
 	Deliverable 3
 	
-	TODO - ADD COMMENTS
-		 - Organize Tests
+	Number of tests: 9
+	
+	Requirements Tested: 2, 3, 5
+	
+	Requirement #2 is implicitly tested by navigating to the Factorial page from the app homepage.
 */
 
 import java.util.regex.Pattern;
@@ -22,6 +25,7 @@ public class FactorialTest {
 	static WebDriver driver;
 	private String baseUrl;
 
+	// Start at the app homepage for each test
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
@@ -29,19 +33,17 @@ public class FactorialTest {
 		driver.get(baseUrl);
 	}
 	
-	//
-	@Test
-	public void testFact0() throws Exception {
-		driver.findElement(By.linkText("Factorial")).click();
-		driver.findElement(By.name("value")).clear();
-		driver.findElement(By.name("value")).sendKeys("0");
-		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
-		assertEquals("Factorial of 0 is 1!", driver.findElement(By.cssSelector("h2")).getText());
-	}
+	// #######################################
+	// ############# VALID INPUT #############
+	// #######################################
 	
-	//
+	// Tests requirement #3
+	// Tests explicit boundary value 1.
+	
+	// Given the app homepage, navigate to the Factorial page.
+	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
 	@Test
-	public void testFact1() throws Exception {
+	public void FactorialValidInput1() throws Exception {
 		driver.findElement(By.linkText("Factorial")).click();
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("1");
@@ -49,9 +51,28 @@ public class FactorialTest {
 		assertEquals("Factorial of 1 is 1!", driver.findElement(By.cssSelector("h2")).getText());
 	}
 	
-	//
+	
+	// Tests requirement #3
+	// Tests explicit boundary value 100.
+	
+	// Given the app homepage, navigate to the Factorial page.
+	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
 	@Test
-	public void testFact73() throws Exception {
+	public void FactorialValidInput100() throws Exception {
+		driver.findElement(By.linkText("Factorial")).click();
+		driver.findElement(By.name("value")).clear();
+		driver.findElement(By.name("value")).sendKeys("100");
+		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
+		assertEquals("Factorial of 100 is 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000!", driver.findElement(By.cssSelector("h2")).getText());
+	}
+	
+	
+	// Tests requirement #3
+	
+	// Given the app homepage, navigate to the Factorial page.
+	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
+	@Test
+	public void FactorialValidInput73() throws Exception {
 		driver.findElement(By.linkText("Factorial")).click();
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("73");
@@ -59,19 +80,36 @@ public class FactorialTest {
 		assertEquals("Factorial of 73 is 4470115461512684340891257138125051110076800700282905015819080092370422104067183317016903680000000000000000!", driver.findElement(By.cssSelector("h2")).getText());
 	}
 	
-	//
+	
+	// #########################################
+	// ############# INVALID INPUT #############
+	// #########################################
+	
+	
+	// Tests requirement #5
+	// Tests explicit boundary value 0.
+	
+	// Given the app homepage, navigate to the Factorial page.
+	// Ensure that if the user enters an integer less than 1 that a message is presented 
+	// to the user indicating that the factorial of their input is 1.
 	@Test
-	public void testFact100() throws Exception {
+	public void FactorialInvalidInput0() throws Exception {
 		driver.findElement(By.linkText("Factorial")).click();
 		driver.findElement(By.name("value")).clear();
-		driver.findElement(By.name("value")).sendKeys("100");
+		driver.findElement(By.name("value")).sendKeys("0");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
-		assertEquals("Factorial of 100 is 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000!", driver.findElement(By.cssSelector("h2")).getText());
+		assertEquals("Factorial of 0 is 1!", driver.findElement(By.cssSelector("h2")).getText());
 	}
+	
   
-	//
+	// Tests requirement #5
+	// Tests explicit boundary value 101.
+	
+	// Given the app homepage, navigate to the Factorial page.
+	// Ensure that if the user enters an integer greater than 100 that a message is presented 
+	// to the user indicating that the factorial of their input is 1.
 	@Test
-	public void testFact101() throws Exception {
+	public void FactorialInvalidInput101() throws Exception {
 		driver.findElement(By.linkText("Factorial")).click();
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("101");
@@ -79,9 +117,27 @@ public class FactorialTest {
 		assertEquals("Factorial of 101 is 1!", driver.findElement(By.cssSelector("h2")).getText());
 	}
 	
-	//
+	// Tests requirement #5
+	
+	// Given the app homepage, navigate to the Factorial page.
+	// Ensure that if the user enters an integer greater than 100 that a message is presented 
+	// to the user indicating that the factorial of their input is 1.
 	@Test
-	public void testFact713() throws Exception {
+	public void FactorialInvalidInputGreaterThan100() throws Exception {
+		driver.findElement(By.linkText("Factorial")).click();
+		driver.findElement(By.name("value")).clear();
+		driver.findElement(By.name("value")).sendKeys("777");
+		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
+		assertEquals("Factorial of 777 is 1!", driver.findElement(By.cssSelector("h2")).getText());
+	}
+	
+	// Tests requirement #5
+	
+	// Given the app homepage, navigate to the Factorial page.
+	// Ensure that if the user enters an integer less than 1 that a message is presented 
+	// to the user indicating that the factorial of their input is 1.
+	@Test
+	public void FactorialInvalidInputLessThan1() throws Exception {
 		driver.findElement(By.linkText("Factorial")).click();
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("-713");
@@ -89,9 +145,13 @@ public class FactorialTest {
 		assertEquals("Factorial of -713 is 1!", driver.findElement(By.cssSelector("h2")).getText());
 	}
 	
-	//
+	// Tests requirement #5
+	
+	// Given the app homepage, navigate to the Factorial page.
+	// Ensure that if the user enters a float number that a message is presented 
+	// to the user indicating that the factorial of their input is 1.
 	@Test
-	public void testFactfloat() throws Exception {
+	public void FactorialInvalidInputFloat() throws Exception {
 		driver.findElement(By.linkText("Factorial")).click();
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("3.141592653");
@@ -99,9 +159,13 @@ public class FactorialTest {
 		assertEquals("Factorial of 3.141592653 is 1!", driver.findElement(By.cssSelector("h2")).getText());
 	}
   
-	//
+	// Tests requirement #5
+	
+	// Given the app homepage, navigate to the Factorial page.
+	// Ensure that if the user enters a string/text that a message is presented 
+	// to the user indicating that the factorial of their input is 1.
 	@Test
-	public void testFactstring() throws Exception {
+	public void FactorialInvalidInputString() throws Exception {
 		driver.findElement(By.linkText("Factorial")).click();
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("Nyan Laboon Cat");
