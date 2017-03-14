@@ -115,7 +115,7 @@ public class FibonacciTest {
 		driver.findElement(By.id("tb1")).clear();
 		driver.findElement(By.id("tb1")).sendKeys("0");
 		driver.findElement(By.id("sub")).click();
-		assertEquals("Fibonacci of 0 is 0!", driver.findElement(By.cssSelector("h2")).getText());
+		assertEquals("Fibonacci of 0 is 1!", driver.findElement(By.cssSelector("h2")).getText());
 	}	
 	
 	
