@@ -65,7 +65,7 @@ public class HelloTest {
 	// will display the hello message from the string/text input the user entered.
 	@Test
 	public void HelloTrailingString() throws Exception {
-		driver.get(baseUrl + "/Nyan Laboon Cat ! @ # $ % ^ & * ( )");
+		driver.get(helloUrl + "/Nyan Laboon Cat ! @ # $ % ^ & * ( )");
 		assertTrue(driver.findElement(By.cssSelector("h2")).getText().matches("^[\\s\\S]*Hello CS1632, from Nyan Laboon Cat ! @ # \\$ % ^ & [\\s\\S]* \\( \\)[\\s\\S]*$"));
 	}
 
@@ -77,7 +77,7 @@ public class HelloTest {
 	// will display the hello message from the integer input the user entered.
 	@Test
 	public void HelloTrailingInt() throws Exception {
-		driver.get(baseUrl + "/713");
+		driver.get(helloUrl + "/713");
 		assertTrue(driver.findElement(By.cssSelector("h2")).getText().matches("^[\\s\\S]*Hello CS1632, from 713[\\s\\S]*$"));
 	}
 
@@ -89,7 +89,7 @@ public class HelloTest {
 	// will display the hello message from the float input the user entered.
 	@Test
 	public void HelloTrailingFloat() throws Exception {
-		driver.get(baseUrl + "/3.141592653");
+		driver.get(helloUrl + "/3.141592653");
 		assertTrue(driver.findElement(By.cssSelector("h2")).getText().matches("^[\\s\\S]*Hello CS1632, from 3\\.141592653[\\s\\S]*$"));
 	}
 	
@@ -123,23 +123,23 @@ public class HelloTest {
 			// If any of the header links cannot be opened then the test fails.
 			driver.findElement(By.linkText("CS1632 D3 Home")).click();
 			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
+			driver.get(helloUrl);
 			
 			driver.findElement(By.linkText("Factorial")).click();
 			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
+			driver.get(helloUrl);
 			
 			driver.findElement(By.linkText("Fibonacci")).click();
 			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
+			driver.get(helloUrl);
 			
 			driver.findElement(By.linkText("Hello")).click();
 			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
+			driver.get(helloUrl);
 			
 			driver.findElement(By.linkText("Cathedral Pics")).click();
 			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
+			driver.get(helloUrl);
 			
 		} catch (org.openqa.selenium.NotFoundException e) {
 			fail();
