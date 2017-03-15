@@ -5,7 +5,7 @@
 	Deliverable 3
 	
 	Number of tests: 10
-	Total number of tests: 31
+	Total number of tests: 30
 	
 	Requirements Tested: 2, 3, 5
 	
