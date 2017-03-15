@@ -89,23 +89,23 @@ public class HomeTest {
 			// If any of the header links cannot be opened then the test fails.
 			driver.findElement(By.linkText("CS1632 D3 Home")).click();
 			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
+			driver.get(homeUrl);
 			
 			driver.findElement(By.linkText("Factorial")).click();
 			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
+			driver.get(homeUrl);
 			
 			driver.findElement(By.linkText("Fibonacci")).click();
 			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
+			driver.get(homeUrl);
 			
 			driver.findElement(By.linkText("Hello")).click();
 			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
+			driver.get(homeUrl);
 			
 			driver.findElement(By.linkText("Cathedral Pics")).click();
 			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
+			driver.get(homeUrl);
 			
 		} catch (org.openqa.selenium.NotFoundException e) {
 			fail();
