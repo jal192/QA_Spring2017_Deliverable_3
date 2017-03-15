@@ -23,7 +23,6 @@ import java.util.*;
 
 public class FibonacciTest {
 	static WebDriver driver;
-	private String baseUrl = "https://cs1632ex.herokuapp.com/";
 	private String fibUrl;
 	
 	private String homeExt = "";
