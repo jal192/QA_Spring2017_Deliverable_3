@@ -4,12 +4,11 @@
 	cs1632
 	Deliverable 3
 	
-	Number of tests: 1
-	Total number of tests: 28
+	Number of tests: 2
+	Total number of tests: 31
 	
 	Requirements Tested: 2, 8
 	
-	Requirement #2 is implicitly tested by navigating to the factorial page from the app homepage.
 */
 
 import java.util.regex.Pattern;
@@ -26,12 +25,18 @@ public class CathedralPicsTest {
 	static WebDriver driver;
 	private String baseUrl;
 	
+	private String homeExt = "";
+	private String factExt = "fact";
+	private String fibExt = "fib";
+	private String helloExt = "hello";
+	private String cathyExt = "cathy";
 	
-	// Start at the app homepage for each test
+	
+	// Start at the Cathedral pictures page for each test
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
-		baseUrl = "https://cs1632ex.herokuapp.com/";
+		baseUrl = "https://cs1632ex.herokuapp.com/cathy";
 		driver.get(baseUrl);
 	}
 	
@@ -42,11 +47,67 @@ public class CathedralPicsTest {
 	
 	// This test ensures that there are only three items displayed to the user.
 	@Test
-	public void OnlyThreePictureElements() throws Exception {
-		driver.findElement(By.linkText("Cathedral Pics")).click();
+	public void CathedralPicsOnlyThreePictureElements() throws Exception {
+		// Count the number of elements in the list.
+		// Check to ensure that there is only three elements.
 		List<WebElement> ol = driver.findElements(By.xpath("//ol"));
 		List<WebElement> picCount = ol.get(0).findElements(By.tagName("li"));
 		assertEquals(3, picCount.size());
+	}
+	
+	
+	// ##############################################
+	// ############# CHECK HEADER LINKS #############
+	// ##############################################
+	
+	
+	// Tests requirement #2
+	
+	// Given the Cathedral Pictures page, ensure that the five links at the top match to the correct corresponding link.
+	// This test checks all 5 links on the Cathedral Pictures page in one test instead of 5 separate tests to prevent 
+	// more than three assertions in one test and not go over the maximum of 30 tests.
+	@Test
+	public void CathedralPicsCheckHeaderLinks() {
+		
+		// Add all the expected Url to the arraylist
+		ArrayList<String> expectedURL = new ArrayList<String>();
+		expectedURL.add(baseUrl + homeExt);
+		expectedURL.add(baseUrl + factExt);
+		expectedURL.add(baseUrl + fibExt);
+		expectedURL.add(baseUrl + helloExt);
+		expectedURL.add(baseUrl + cathyExt);
+		
+		ArrayList<String> resultedURL = new ArrayList<String>();
+		
+		try { 
+			// For each header link, click on the link and then retrieve the resulting URL.
+			// Store the resulting URL in an arraylist then return back to the Cathedral Pictures page.
+			// If any of the header links cannot be opened then the test fails.
+			driver.findElement(By.linkText("CS1632 D3 Home")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+			driver.findElement(By.linkText("Factorial")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+			driver.findElement(By.linkText("Fibonacci")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+			driver.findElement(By.linkText("Hello")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+			driver.findElement(By.linkText("Cathedral Pics")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+		} catch (org.openqa.selenium.NotFoundException e) {
+			fail();
+		}
+		
+		assertEquals(expectedURL, resultedURL);
 	}
 	
 	

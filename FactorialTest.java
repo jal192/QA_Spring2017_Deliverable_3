@@ -4,12 +4,11 @@
 	cs1632
 	Deliverable 3
 	
-	Number of tests: 9
-	Total number of tests: 28
+	Number of tests: 10
+	Total number of tests: 31
 	
 	Requirements Tested: 2, 3, 5
 	
-	Requirement #2 is implicitly tested by navigating to the Factorial page from the app homepage.
 */
 
 import java.util.regex.Pattern;
@@ -25,12 +24,19 @@ import java.util.*;
 public class FactorialTest {
 	static WebDriver driver;
 	private String baseUrl;
+	
+	private String homeExt = "";
+	private String factExt = "fact";
+	private String fibExt = "fib";
+	private String helloExt = "hello";
+	private String cathyExt = "cathy";
+	
 
-	// Start at the app homepage for each test
+	// Start at the factorial page for each test
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
-		baseUrl = "https://cs1632ex.herokuapp.com/";
+		baseUrl = "https://cs1632ex.herokuapp.com/fact";
 		driver.get(baseUrl);
 	}
 	
@@ -39,6 +45,7 @@ public class FactorialTest {
 	// ############# VALID INPUT #############
 	// #######################################
 	
+	
 	// Tests requirement #3
 	// Tests explicit boundary value 1.
 	
@@ -46,7 +53,8 @@ public class FactorialTest {
 	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
 	@Test
 	public void FactorialValidInput1() throws Exception {
-		driver.findElement(By.linkText("Factorial")).click();
+		// Clear the textbox then enter 1 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("1");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -61,7 +69,8 @@ public class FactorialTest {
 	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
 	@Test
 	public void FactorialValidInput100() throws Exception {
-		driver.findElement(By.linkText("Factorial")).click();
+		// Clear the textbox then enter 100 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("100");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -75,7 +84,8 @@ public class FactorialTest {
 	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
 	@Test
 	public void FactorialValidInput73() throws Exception {
-		driver.findElement(By.linkText("Factorial")).click();
+		// Clear the textbox then enter 73 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("73");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -96,7 +106,8 @@ public class FactorialTest {
 	// to the user indicating that the factorial of their input is 1.
 	@Test
 	public void FactorialInvalidInput0() throws Exception {
-		driver.findElement(By.linkText("Factorial")).click();
+		// Clear the textbox then enter 0 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("0");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -112,7 +123,8 @@ public class FactorialTest {
 	// to the user indicating that the factorial of their input is 1.
 	@Test
 	public void FactorialInvalidInput101() throws Exception {
-		driver.findElement(By.linkText("Factorial")).click();
+		// Clear the textbox then enter 101 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("101");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -127,7 +139,8 @@ public class FactorialTest {
 	// to the user indicating that the factorial of their input is 1.
 	@Test
 	public void FactorialInvalidInputGreaterThan100() throws Exception {
-		driver.findElement(By.linkText("Factorial")).click();
+		// Clear the textbox then enter 777 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("777");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -142,7 +155,8 @@ public class FactorialTest {
 	// to the user indicating that the factorial of their input is 1.
 	@Test
 	public void FactorialInvalidInputLessThan1() throws Exception {
-		driver.findElement(By.linkText("Factorial")).click();
+		// Clear the textbox then enter -713 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("-713");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -157,7 +171,8 @@ public class FactorialTest {
 	// to the user indicating that the factorial of their input is 1.
 	@Test
 	public void FactorialInvalidInputFloat() throws Exception {
-		driver.findElement(By.linkText("Factorial")).click();
+		// Clear the textbox then enter 3.141592653 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("3.141592653");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -172,11 +187,67 @@ public class FactorialTest {
 	// to the user indicating that the factorial of their input is 1.
 	@Test
 	public void FactorialInvalidInputString() throws Exception {
-		driver.findElement(By.linkText("Factorial")).click();
+		// Clear the textbox then enter Nyan Laboon Cat into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.name("value")).clear();
 		driver.findElement(By.name("value")).sendKeys("Nyan Laboon Cat");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
 		assertEquals("Factorial of Nyan Laboon Cat is 1!", driver.findElement(By.cssSelector("h2")).getText());
+	}
+	
+	
+	// ##############################################
+	// ############# CHECK HEADER LINKS #############
+	// ##############################################
+	
+	
+	// Tests requirement #2
+	
+	// Given the Factorial page, ensure that the five links at the top match to the correct corresponding link.
+	// This test checks all 5 links on the Factorial page in one test instead of 5 separate tests to prevent 
+	// more than three assertions in one test and not go over the maximum of 30 tests.
+	@Test
+	public void FactorialCheckHeaderLinks() {
+		
+		// Add all the expected Url to the arraylist
+		ArrayList<String> expectedURL = new ArrayList<String>();
+		expectedURL.add(baseUrl + homeExt);
+		expectedURL.add(baseUrl + factExt);
+		expectedURL.add(baseUrl + fibExt);
+		expectedURL.add(baseUrl + helloExt);
+		expectedURL.add(baseUrl + cathyExt);
+		
+		ArrayList<String> resultedURL = new ArrayList<String>();
+		
+		try { 
+			// For each header link, click on the link and then retrieve the resulting URL.
+			// Store the resulting URL in an arraylist then return back to the factorial page.
+			// If any of the header links cannot be opened then the test fails.
+			driver.findElement(By.linkText("CS1632 D3 Home")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+			driver.findElement(By.linkText("Factorial")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+			driver.findElement(By.linkText("Fibonacci")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+			driver.findElement(By.linkText("Hello")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+			driver.findElement(By.linkText("Cathedral Pics")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+		} catch (org.openqa.selenium.NotFoundException e) {
+			fail();
+		}
+		
+		assertEquals(expectedURL, resultedURL);
 	}
   
 	

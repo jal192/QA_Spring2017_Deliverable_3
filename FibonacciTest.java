@@ -4,12 +4,11 @@
 	cs1632
 	Deliverable 3
 	
-	Number of tests: 10
-	Total number of tests: 28
+	Number of tests: 11
+	Total number of tests: 31
 	
 	Requirements Tested: 2, 4, 5
 	
-	Requirement #2 is implicitly tested by navigating to the Fibonacci page from the app homepage.
 */
 
 import java.util.regex.Pattern;
@@ -26,12 +25,18 @@ public class FibonacciTest {
 	static WebDriver driver;
 	private String baseUrl;
 	
+	private String homeExt = "";
+	private String factExt = "fact";
+	private String fibExt = "fib";
+	private String helloExt = "hello";
+	private String cathyExt = "cathy";
 	
-	// Start at the app homepage for each test
+	
+	// Start at the Fibonacci page for each test
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
-		baseUrl = "https://cs1632ex.herokuapp.com/";
+		baseUrl = "https://cs1632ex.herokuapp.com/fib";
 		driver.get(baseUrl);
 	}
 	
@@ -48,7 +53,8 @@ public class FibonacciTest {
 	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
 	@Test
 	public void FibonacciValidInput1() throws Exception {
-		driver.findElement(By.linkText("Fibonacci")).click();
+		// Clear the textbox then enter 1 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.id("tb1")).clear();
 		driver.findElement(By.id("tb1")).sendKeys("1");
 		driver.findElement(By.id("sub")).click();
@@ -63,7 +69,8 @@ public class FibonacciTest {
 	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
 	@Test
 	public void FibonacciValidInput100() throws Exception {
-		driver.findElement(By.linkText("Fibonacci")).click();
+		// Clear the textbox then enter 100 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.id("tb1")).clear();
 		driver.findElement(By.id("tb1")).sendKeys("100");
 		driver.findElement(By.id("sub")).click();
@@ -77,7 +84,8 @@ public class FibonacciTest {
 	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
 	@Test
 	public void FibonacciValidInput30() throws Exception {
-		driver.findElement(By.linkText("Fibonacci")).click();
+		// Clear the textbox then enter 30 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.id("tb1")).clear();
 		driver.findElement(By.id("tb1")).sendKeys("30");
 		driver.findElement(By.id("sub")).click();
@@ -91,7 +99,8 @@ public class FibonacciTest {
 	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
 	@Test
 	public void FibonacciValidInput50() throws Exception {
-		driver.findElement(By.linkText("Fibonacci")).click();
+		// Clear the textbox then enter 50 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.id("tb1")).clear();
 		driver.findElement(By.id("tb1")).sendKeys("50");
 		driver.findElement(By.id("sub")).click();
@@ -111,7 +120,8 @@ public class FibonacciTest {
 	// to the user indicating that the Fibonacci of their input is 1.
 	@Test
 	public void FibonacciInvalidInput0() throws Exception {
-		driver.findElement(By.linkText("Fibonacci")).click();
+		// Clear the textbox then enter 0 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.id("tb1")).clear();
 		driver.findElement(By.id("tb1")).sendKeys("0");
 		driver.findElement(By.id("sub")).click();
@@ -127,7 +137,8 @@ public class FibonacciTest {
 	// to the user indicating that the Fibonacci of their input is 1.
 	@Test
 	public void FibonacciInvalidInput101() throws Exception {
-		driver.findElement(By.linkText("Fibonacci")).click();
+		// Clear the textbox then enter 100 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.id("tb1")).clear();
 		driver.findElement(By.id("tb1")).sendKeys("101");
 		driver.findElement(By.id("sub")).click();
@@ -142,7 +153,8 @@ public class FibonacciTest {
 	// to the user indicating that the Fibonacci of their input is 1.
 	@Test
 	public void FibonacciInvalidInputLessThan1() throws Exception {
-		driver.findElement(By.linkText("Fibonacci")).click();
+		// Clear the textbox then enter -713 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.id("tb1")).clear();
 		driver.findElement(By.id("tb1")).sendKeys("-713");
 		driver.findElement(By.id("sub")).click();
@@ -157,7 +169,8 @@ public class FibonacciTest {
 	// to the user indicating that the Fibonacci of their input is 1.
 	@Test
 	public void FibonacciInvalidInputGreaterThan100() throws Exception {
-		driver.findElement(By.linkText("Fibonacci")).click();
+		// Clear the textbox then enter 777 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.id("tb1")).clear();
 		driver.findElement(By.id("tb1")).sendKeys("777");
 		driver.findElement(By.id("sub")).click();
@@ -172,7 +185,8 @@ public class FibonacciTest {
 	// to the user indicating that the Fibonacci of their input is 1.
 	@Test
 	public void FibonacciInvalidInputFloat() throws Exception {
-		driver.findElement(By.linkText("Fibonacci")).click();
+		// Clear the textbox then enter 1.234567 into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.id("tb1")).clear();
 		driver.findElement(By.id("tb1")).sendKeys("1.234567");
 		driver.findElement(By.id("sub")).click();
@@ -187,11 +201,67 @@ public class FibonacciTest {
 	// to the user indicating that the Fibonacci of their input is 1.
 	@Test
 	public void FibonacciInvalidInputString() throws Exception {
-		driver.findElement(By.linkText("Fibonacci")).click();
+		// Clear the textbox then enter Party Time! into the textbox and submit the input to be calculated.
+		// Ensure that the outputted message matches what is expected.
 		driver.findElement(By.id("tb1")).clear();
 		driver.findElement(By.id("tb1")).sendKeys("Party Time!");
 		driver.findElement(By.id("sub")).click();
 		assertEquals("Fibonacci of Party Time! is 1!", driver.findElement(By.cssSelector("h2")).getText());
+	}
+	
+	
+	// ##############################################
+	// ############# CHECK HEADER LINKS #############
+	// ##############################################
+	
+	
+	// Tests requirement #2
+	
+	// Given the Fibonacci page, ensure that the five links at the top match to the correct corresponding link.
+	// This test checks all 5 links on the Fibonacci page in one test instead of 5 separate tests to prevent 
+	// more than three assertions in one test and not go over the maximum of 30 tests.
+	@Test
+	public void FibonacciCheckHeaderLinks() {
+		
+		// Add all the expected Url to the arraylist
+		ArrayList<String> expectedURL = new ArrayList<String>();
+		expectedURL.add(baseUrl + homeExt);
+		expectedURL.add(baseUrl + factExt);
+		expectedURL.add(baseUrl + fibExt);
+		expectedURL.add(baseUrl + helloExt);
+		expectedURL.add(baseUrl + cathyExt);
+		
+		ArrayList<String> resultedURL = new ArrayList<String>();
+		
+		try { 
+			// For each header link, click on the link and then retrieve the resulting URL.
+			// Store the resulting URL in an arraylist then return back to the Fibonacci page.
+			// If any of the header links cannot be opened then the test fails.
+			driver.findElement(By.linkText("CS1632 D3 Home")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+			driver.findElement(By.linkText("Factorial")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+			driver.findElement(By.linkText("Fibonacci")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+			driver.findElement(By.linkText("Hello")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+			driver.findElement(By.linkText("Cathedral Pics")).click();
+			resultedURL.add(driver.getCurrentUrl());
+			driver.get(baseUrl);
+			
+		} catch (org.openqa.selenium.NotFoundException e) {
+			fail();
+		}
+		
+		assertEquals(expectedURL, resultedURL);
 	}
 	
 	
