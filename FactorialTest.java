@@ -23,7 +23,7 @@ import java.util.*;
 
 public class FactorialTest {
 	static WebDriver driver;
-	private String baseUrl;
+	private String baseUrl = "https://cs1632ex.herokuapp.com/";
 	
 	private String homeExt = "";
 	private String factExt = "fact";
@@ -36,8 +36,8 @@ public class FactorialTest {
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
-		baseUrl = "https://cs1632ex.herokuapp.com/fact";
-		driver.get(baseUrl);
+		factUrl = "https://cs1632ex.herokuapp.com/fact";
+		driver.get(factUrl);
 	}
 	
 	

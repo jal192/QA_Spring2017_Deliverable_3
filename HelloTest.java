@@ -23,7 +23,7 @@ import java.util.*;
 
 public class HelloTest {
 	static WebDriver driver;
-	private String baseUrl;
+	private String baseUrl = "https://cs1632ex.herokuapp.com/";
 	
 	private String homeExt = "";
 	private String factExt = "fact";
@@ -36,8 +36,8 @@ public class HelloTest {
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
-		baseUrl = "https://cs1632ex.herokuapp.com/hello";
-		driver.get(baseUrl);
+		helloUrl = "https://cs1632ex.herokuapp.com/hello";
+		driver.get(helloUrl);
 	}
 	
 	

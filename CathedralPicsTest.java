@@ -23,7 +23,7 @@ import java.util.*;
 
 public class CathedralPicsTest {
 	static WebDriver driver;
-	private String baseUrl;
+	private String baseUrl = "https://cs1632ex.herokuapp.com/";
 	
 	private String homeExt = "";
 	private String factExt = "fact";
@@ -31,13 +31,12 @@ public class CathedralPicsTest {
 	private String helloExt = "hello";
 	private String cathyExt = "cathy";
 	
-	
 	// Start at the Cathedral pictures page for each test
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
-		baseUrl = "https://cs1632ex.herokuapp.com/cathy";
-		driver.get(baseUrl);
+		cathyUrl = "https://cs1632ex.herokuapp.com/cathy";
+		driver.get(cathyUrl);
 	}
 	
 	
