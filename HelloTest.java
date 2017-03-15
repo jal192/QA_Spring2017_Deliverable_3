@@ -24,6 +24,7 @@ import java.util.*;
 public class HelloTest {
 	static WebDriver driver;
 	private String baseUrl = "https://cs1632ex.herokuapp.com/";
+	private String helloUrl;
 	
 	private String homeExt = "";
 	private String factExt = "fact";

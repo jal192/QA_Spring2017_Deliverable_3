@@ -24,6 +24,7 @@ import java.util.*;
 public class CathedralPicsTest {
 	static WebDriver driver;
 	private String baseUrl = "https://cs1632ex.herokuapp.com/";
+	private String cathyUrl;
 	
 	private String homeExt = "";
 	private String factExt = "fact";

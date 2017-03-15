@@ -24,6 +24,7 @@ import java.util.*;
 public class FactorialTest {
 	static WebDriver driver;
 	private String baseUrl = "https://cs1632ex.herokuapp.com/";
+	private String factUrl;
 	
 	private String homeExt = "";
 	private String factExt = "fact";
