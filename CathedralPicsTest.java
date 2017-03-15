@@ -42,8 +42,6 @@ public class CathedralPicsTest {
 	
 	
 	// Tests requirement #8
-	// This test implicitly tests requirement #2, ensuring that clicking on the 
-	// Cathedral header link leads to pictures of the Cathedral of Learning.
 	
 	// This test ensures that there are only three items displayed to the user.
 	@Test

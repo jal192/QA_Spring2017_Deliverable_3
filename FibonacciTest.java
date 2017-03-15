@@ -49,8 +49,8 @@ public class FibonacciTest {
 	// Tests requirement #4
 	// Tests explicit boundary value 1.
 	
-	// Given the app homepage, navigate to the Fibonacci page.
-	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
+	// Given the Fibonacci page, enter and submit 1 for calulation.
+	// Ensure that if the user enters a valid integer between 1 and 100, a message containing the correct results is displayed.
 	@Test
 	public void FibonacciValidInput1() throws Exception {
 		// Clear the textbox then enter 1 into the textbox and submit the input to be calculated.
@@ -65,8 +65,8 @@ public class FibonacciTest {
 	// Tests requirement #4
 	// Tests explicit boundary value 100.
 	
-	// Given the app homepage, navigate to the Fibonacci page.
-	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
+	// Given the Fibonacci page, enter and submit 100 for calulation.
+	// Ensure that if the user enters a valid integer between 1 and 100, a message containing the correct results is displayed.
 	@Test
 	public void FibonacciValidInput100() throws Exception {
 		// Clear the textbox then enter 100 into the textbox and submit the input to be calculated.
@@ -80,8 +80,8 @@ public class FibonacciTest {
 	
 	// Tests requirement #4
 	
-	// Given the app homepage, navigate to the Fibonacci page.
-	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
+	// Given the Fibonacci page, enter and submit 30 for calulation.
+	// Ensure that if the user enters a valid integer between 1 and 100, a message containing the correct results is displayed.
 	@Test
 	public void FibonacciValidInput30() throws Exception {
 		// Clear the textbox then enter 30 into the textbox and submit the input to be calculated.
@@ -95,8 +95,8 @@ public class FibonacciTest {
 	
 	// Tests requirement #4
 	
-	// Given the app homepage, navigate to the Fibonacci page.
-	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
+	// Given the Fibonacci page, enter and submit 50 for calulation.
+	// Ensure that if the user enters a valid integer between 1 and 100, a message containing the correct results is displayed.
 	@Test
 	public void FibonacciValidInput50() throws Exception {
 		// Clear the textbox then enter 50 into the textbox and submit the input to be calculated.
@@ -115,7 +115,7 @@ public class FibonacciTest {
 	// Tests requirement #5
 	// Tests explicit boundary value 0.
 	
-	// Given the app homepage, navigate to the Fibonacci page.
+	// Given the Fibonacci page, enter and submit 0 for calulation.
 	// Ensure that if the user enters and submits an integer less than 1 that a message is presented 
 	// to the user indicating that the Fibonacci of their input is 1.
 	@Test
@@ -132,7 +132,7 @@ public class FibonacciTest {
 	// Tests requirement #5
 	// Tests explicit boundary value 101.
 	
-	// Given the app homepage, navigate to the Fibonacci page.
+	// Given the Fibonacci page, enter and submit 101 for calulation.
 	// Ensure that if the user enters and submits an integer greater than 100 that a message is presented 
 	// to the user indicating that the Fibonacci of their input is 1.
 	@Test
@@ -148,7 +148,7 @@ public class FibonacciTest {
 	
 	// Tests requirement #5
 	
-	// Given the app homepage, navigate to the Fibonacci page.
+	// Given the Fibonacci page, enter and submit -713 for calulation.
 	// Ensure that if the user enters and submits an integer less than 1 that a message is presented 
 	// to the user indicating that the Fibonacci of their input is 1.
 	@Test
@@ -164,7 +164,7 @@ public class FibonacciTest {
 	
 	// Tests requirement #5
 	
-	// Given the app homepage, navigate to the Fibonacci page.
+	// Given the Fibonacci page, enter and submit 777 for calulation.
 	// Ensure that if the user enters and submits an integer greater than 100 that a message is presented 
 	// to the user indicating that the Fibonacci of their input is 1.
 	@Test
@@ -180,7 +180,7 @@ public class FibonacciTest {
 	
 	// Tests requirement #5
 	
-	// Given the app homepage, navigate to the Fibonacci page.
+	// Given the Fibonacci page, enter and submit 1.234567 for calulation.
 	// Ensure that if the user enters a float number that a message is presented 
 	// to the user indicating that the Fibonacci of their input is 1.
 	@Test
@@ -196,7 +196,7 @@ public class FibonacciTest {
 	
 	// Tests requirement #5
 	
-	// Given the app homepage, navigate to the Fibonacci page.
+	// Given the Fibonacci page, enter and submit Party Time! for calulation.
 	// Ensure that if the user enters a string/text that a message is presented 
 	// to the user indicating that the Fibonacci of their input is 1.
 	@Test

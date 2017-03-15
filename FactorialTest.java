@@ -50,8 +50,8 @@ public class FactorialTest {
 	// Tests requirement #3
 	// Tests explicit boundary value 1.
 	
-	// Given the app homepage, navigate to the Factorial page.
-	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
+	// Given the Factorial page, enter and submit 1 for calulation.
+	// Ensure that if the user enters a valid integer between 1 and 100, a message containing the correct results is displayed.
 	@Test
 	public void FactorialValidInput1() throws Exception {
 		// Clear the textbox then enter 1 into the textbox and submit the input to be calculated.
@@ -66,8 +66,8 @@ public class FactorialTest {
 	// Tests requirement #3
 	// Tests explicit boundary value 100.
 	
-	// Given the app homepage, navigate to the Factorial page.
-	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
+	// Given the Factorial page, enter and submit 100 for calulation.
+	// Ensure that if the user enters a valid integer between 1 and 100, a message containing the correct results is displayed.
 	@Test
 	public void FactorialValidInput100() throws Exception {
 		// Clear the textbox then enter 100 into the textbox and submit the input to be calculated.
@@ -81,8 +81,8 @@ public class FactorialTest {
 	
 	// Tests requirement #3
 	
-	// Given the app homepage, navigate to the Factorial page.
-	// Ensure that if the user enters a valid integer between 1 and 100 that the correct results are displayed.
+	// Given the Factorial page, enter and submit 73 for calulation.
+	// Ensure that if the user enters a valid integer between 1 and 100, a message containing the correct results is displayed.
 	@Test
 	public void FactorialValidInput73() throws Exception {
 		// Clear the textbox then enter 73 into the textbox and submit the input to be calculated.
@@ -102,7 +102,7 @@ public class FactorialTest {
 	// Tests requirement #5
 	// Tests explicit boundary value 0.
 	
-	// Given the app homepage, navigate to the Factorial page.
+	// Given the Factorial page, enter and submit 0 for calulation.
 	// Ensure that if the user enters an integer less than 1 that a message is presented 
 	// to the user indicating that the factorial of their input is 1.
 	@Test
@@ -119,7 +119,7 @@ public class FactorialTest {
 	// Tests requirement #5
 	// Tests explicit boundary value 101.
 	
-	// Given the app homepage, navigate to the Factorial page.
+	// Given the Factorial page, enter and submit 101 for calulation.
 	// Ensure that if the user enters an integer greater than 100 that a message is presented 
 	// to the user indicating that the factorial of their input is 1.
 	@Test
@@ -135,7 +135,7 @@ public class FactorialTest {
 	
 	// Tests requirement #5
 	
-	// Given the app homepage, navigate to the Factorial page.
+	// Given the Factorial page, enter and submit 777 for calulation.
 	// Ensure that if the user enters an integer greater than 100 that a message is presented 
 	// to the user indicating that the factorial of their input is 1.
 	@Test
@@ -151,7 +151,7 @@ public class FactorialTest {
 	
 	// Tests requirement #5
 	
-	// Given the app homepage, navigate to the Factorial page.
+	// Given the Factorial page, enter and submit -713 for calulation.
 	// Ensure that if the user enters an integer less than 1 that a message is presented 
 	// to the user indicating that the factorial of their input is 1.
 	@Test
@@ -167,7 +167,7 @@ public class FactorialTest {
 	
 	// Tests requirement #5
 	
-	// Given the app homepage, navigate to the Factorial page.
+	// Given the Factorial page, enter and submit 3.141592653 for calulation.
 	// Ensure that if the user enters a float number that a message is presented 
 	// to the user indicating that the factorial of their input is 1.
 	@Test
@@ -183,7 +183,7 @@ public class FactorialTest {
   
 	// Tests requirement #5
 	
-	// Given the app homepage, navigate to the Factorial page.
+	// Given the Factorial page, enter and submit Nyan Laboon Cat for calulation.
 	// Ensure that if the user enters a string/text that a message is presented 
 	// to the user indicating that the factorial of their input is 1.
 	@Test
