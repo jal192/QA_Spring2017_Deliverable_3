@@ -7,7 +7,7 @@
 	Number of tests: 10
 	Total number of tests: 30
 	
-	Requirements Tested: 2, 4, 5
+	Requirements Tested: 4, 5
 	
 */
 
