@@ -4,8 +4,8 @@
 	cs1632
 	Deliverable 3
 	
-	Number of tests: 11
-	Total number of tests: 31
+	Number of tests: 10
+	Total number of tests: 30
 	
 	Requirements Tested: 2, 4, 5
 	
@@ -208,61 +208,6 @@ public class FibonacciTest {
 		driver.findElement(By.id("tb1")).sendKeys("Party Time!");
 		driver.findElement(By.id("sub")).click();
 		assertEquals("Fibonacci of Party Time! is 1!", driver.findElement(By.cssSelector("h2")).getText());
-	}
-	
-	
-	// ##############################################
-	// ############# CHECK HEADER LINKS #############
-	// ##############################################
-	
-	
-	// Tests requirement #2
-	
-	// Given the Fibonacci page, ensure that the five links at the top match to the correct corresponding link.
-	// This test checks all 5 links on the Fibonacci page in one test instead of 5 separate tests to prevent 
-	// more than three assertions in one test and not go over the maximum of 30 tests.
-	@Test
-	public void FibonacciCheckHeaderLinks() {
-		
-		// Add all the expected Url to the arraylist
-		ArrayList<String> expectedURL = new ArrayList<String>();
-		expectedURL.add(baseUrl + homeExt);
-		expectedURL.add(baseUrl + factExt);
-		expectedURL.add(baseUrl + fibExt);
-		expectedURL.add(baseUrl + helloExt);
-		expectedURL.add(baseUrl + cathyExt);
-		
-		ArrayList<String> resultedURL = new ArrayList<String>();
-		
-		try { 
-			// For each header link, click on the link and then retrieve the resulting URL.
-			// Store the resulting URL in an arraylist then return back to the Fibonacci page.
-			// If any of the header links cannot be opened then the test fails.
-			driver.findElement(By.linkText("CS1632 D3 Home")).click();
-			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
-			
-			driver.findElement(By.linkText("Factorial")).click();
-			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
-			
-			driver.findElement(By.linkText("Fibonacci")).click();
-			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
-			
-			driver.findElement(By.linkText("Hello")).click();
-			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
-			
-			driver.findElement(By.linkText("Cathedral Pics")).click();
-			resultedURL.add(driver.getCurrentUrl());
-			driver.get(baseUrl);
-			
-		} catch (org.openqa.selenium.NotFoundException e) {
-			fail();
-		}
-		
-		assertEquals(expectedURL, resultedURL);
 	}
 	
 	
