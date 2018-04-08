@@ -1,7 +1,6 @@
 /*
 	Jason Ly
 	3/15/17
-	cs1632
 	Deliverable 3
 	
 	Number of tests: 10
